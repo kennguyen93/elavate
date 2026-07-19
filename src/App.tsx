@@ -20,11 +20,11 @@ export default function App() {
   
   // Quick notification banner state
   const [toastMessage, setToastMessage] = useState("");
-  const [countdown, setCountdown] = useState(1);
+  const [countdown, setCountdown] = useState(5);
   const [isRedirected, setIsRedirected] = useState(false);
 
   useEffect(() => {
-    // Attempt automatic redirect after 1 second
+    // Attempt automatic redirect after 5 seconds
     const timer = setTimeout(() => {
       setIsRedirected(true);
       try {
@@ -32,7 +32,7 @@ export default function App() {
       } catch (err) {
         console.error("Redirection failed, user can use the manual button:", err);
       }
-    }, 1000);
+    }, 5000);
 
     // Countdown tick
     const interval = setInterval(() => {
