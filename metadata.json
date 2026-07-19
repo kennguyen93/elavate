@@ -1,0 +1,6 @@
+{
+  "name": "Elavate Collagen",
+  "description": "A high-fidelity e-commerce clone of elavate.com featuring an interactive product page, sliding cart drawer, flavor and wellness quiz, ingredients spotlight, customer reviews, and responsive design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
