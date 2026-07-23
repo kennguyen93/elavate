@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProductSelector from "./components/ProductSelector";
@@ -20,34 +20,6 @@ export default function App() {
   
   // Quick notification banner state
   const [toastMessage, setToastMessage] = useState("");
-  const [countdown, setCountdown] = useState(3);
-  const [isRedirected, setIsRedirected] = useState(false);
-
-  useEffect(() => {
-    // Attempt automatic redirect after 3 seconds
-    const timer = setTimeout(() => {
-      setIsRedirected(true);
-      try {
-        window.location.href = "https://www.elavate.com/KEN61101";
-      } catch (err) {
-        console.error("Redirection failed, user can use the manual button:", err);
-      }
-    }, 3000);
-
-    // Countdown tick
-    const interval = setInterval(() => {
-      setCountdown((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-      clearInterval(interval);
-    };
-  }, []);
-
-  const handleManualRedirect = () => {
-    window.open("https://www.elavate.com/KEN61101", "_blank", "noopener,noreferrer");
-  };
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
