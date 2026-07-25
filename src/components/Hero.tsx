@@ -29,7 +29,8 @@ export default function Hero({ onStartTransformation, imageUrl }: HeroProps) {
               className="w-full h-full object-cover select-none pointer-events-none hover:scale-102 transition-transform duration-500"
               onError={(e) => {
                 const target = e.currentTarget;
-                if (target.src !== "/images/elavate_chocolate_collagen.jpg") {
+                if (!target.dataset.fallbackTried) {
+                  target.dataset.fallbackTried = "true";
                   target.src = "/images/elavate_chocolate_collagen.jpg";
                 }
               }}

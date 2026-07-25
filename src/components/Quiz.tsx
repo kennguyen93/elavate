@@ -198,7 +198,8 @@ export default function Quiz({ isOpen, onClose, onApplyRecommendation }: QuizPro
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.currentTarget;
-                        if (target.src !== "/images/elavate_chocolate_collagen.jpg") {
+                        if (!target.dataset.fallbackTried) {
+                          target.dataset.fallbackTried = "true";
                           target.src = "/images/elavate_chocolate_collagen.jpg";
                         }
                       }}
