@@ -1,0 +1,46 @@
+name: Deploy via FTP
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch: # Cho phép trigger thủ công từ giao diện GitHub
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📂 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🚀 Build project
+        run: npm run build
+
+      - name: 📤 Deploy to FTP Server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Thư mục chứa code đã build từ Vite
+          local-dir: ./dist/
+          # Thư mục đích trên hosting của bạn (ví dụ: public_html/ hoặc web/)
+          # Mặc định sẽ upload vào thư mục gốc của tài khoản FTP
+          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
+          # Tùy chọn: bỏ qua một số file không cần thiết khi upload lên server
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
