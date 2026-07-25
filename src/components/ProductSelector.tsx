@@ -71,7 +71,12 @@ export default function ProductSelector({ onAddToCart }: ProductSelectorProps) {
                             src={flavor.image}
                             alt={flavor.name}
                             className="w-full h-full object-cover"
-                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              if (target.src !== "/images/elavate_chocolate_collagen.jpg") {
+                                target.src = "/images/elavate_chocolate_collagen.jpg";
+                              }
+                            }}
                           />
                         ) : (
                           <div className={`w-full h-full bg-gradient-to-br ${flavor.color}`} />

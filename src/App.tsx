@@ -176,7 +176,7 @@ export default function App() {
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   // Reference the main generated product image for Chocolate flavour
-  const mainHeroImage = chocolateImg;
+  const mainHeroImage = chocolateImg || "/images/elavate_chocolate_collagen.jpg";
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-sky-100 selection:text-sky-800">

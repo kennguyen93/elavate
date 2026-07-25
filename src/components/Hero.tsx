@@ -27,7 +27,12 @@ export default function Hero({ onStartTransformation, imageUrl }: HeroProps) {
               src={imageUrl}
               alt="elavate MULTI COLLAGEN SUPERBLEND Chocolate Flavour"
               className="w-full h-full object-cover select-none pointer-events-none hover:scale-102 transition-transform duration-500"
-              referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (target.src !== "/images/elavate_chocolate_collagen.jpg") {
+                  target.src = "/images/elavate_chocolate_collagen.jpg";
+                }
+              }}
             />
             {/* Soft Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent pointer-events-none" />

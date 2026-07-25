@@ -162,7 +162,17 @@ export default function CartDrawer({
                               {/* Thumbnail */}
                               <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0 bg-slate-50">
                                 {item.flavor.id === "chocolate" ? (
-                                  <img src={item.flavor.image} alt={item.flavor.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                                  <img
+                                    src={item.flavor.image}
+                                    alt={item.flavor.name}
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                      const target = e.currentTarget;
+                                      if (target.src !== "/images/elavate_chocolate_collagen.jpg") {
+                                        target.src = "/images/elavate_chocolate_collagen.jpg";
+                                      }
+                                    }}
+                                  />
                                 ) : (
                                   <div className={`w-full h-full bg-gradient-to-br ${item.flavor.color}`} />
                                 )}

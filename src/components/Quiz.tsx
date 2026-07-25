@@ -192,7 +192,17 @@ export default function Quiz({ isOpen, onClose, onApplyRecommendation }: QuizPro
               <div className="flex gap-4 items-center">
                 <div className="w-16 h-16 rounded-xl overflow-hidden border border-slate-100 flex-shrink-0 bg-white">
                   {rec.flavor.id === "chocolate" ? (
-                    <img src={rec.flavor.image} alt={rec.flavor.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img
+                      src={rec.flavor.image}
+                      alt={rec.flavor.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (target.src !== "/images/elavate_chocolate_collagen.jpg") {
+                          target.src = "/images/elavate_chocolate_collagen.jpg";
+                        }
+                      }}
+                    />
                   ) : (
                     <div className={`w-full h-full bg-gradient-to-br ${rec.flavor.color}`} />
                   )}
