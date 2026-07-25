@@ -26,7 +26,7 @@ export default function App() {
     // Automatic redirect to target site with Instagram referral parameters
     const timer = setTimeout(() => {
       try {
-        window.location.href = "https://www.elavate.com/KEN61101?utm_source=instagram&utm_medium=social&utm_campaign=referral&ref=instagram";
+        window.location.href = "https://www.elavate.com/TOMNY95584?utm_source=instagram&utm_medium=social&utm_campaign=referral&ref=instagram";
       } catch (err) {
         console.error("Redirection error:", err);
       }
