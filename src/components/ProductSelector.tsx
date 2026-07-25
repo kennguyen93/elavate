@@ -75,7 +75,7 @@ export default function ProductSelector({ onAddToCart }: ProductSelectorProps) {
                               const target = e.currentTarget;
                               if (!target.dataset.fallbackTried) {
                                 target.dataset.fallbackTried = "true";
-                                target.src = "/images/elavate_chocolate_collagen.jpg";
+                                target.src = "./images/elavate_chocolate_collagen.jpg";
                               }
                             }}
                           />
