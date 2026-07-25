@@ -1,5 +1,6 @@
 import { Star, Check } from "lucide-react";
 import { motion } from "motion/react";
+import chocolateImg from "../assets/images/elavate_chocolate_collagen_1784471078378.jpg";
 
 interface HeroProps {
   onStartTransformation: () => void;
@@ -24,14 +25,14 @@ export default function Hero({ onStartTransformation, imageUrl }: HeroProps) {
           {/* Main Studio Quality Product Photo */}
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
             <img
-              src={imageUrl}
+              src={imageUrl || chocolateImg}
               alt="elavate MULTI COLLAGEN SUPERBLEND Chocolate Flavour"
               className="w-full h-full object-cover select-none pointer-events-none hover:scale-102 transition-transform duration-500"
               onError={(e) => {
                 const target = e.currentTarget;
                 if (!target.dataset.fallbackTried) {
                   target.dataset.fallbackTried = "true";
-                  target.src = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1000&auto=format&fit=crop";
+                  target.src = chocolateImg;
                 }
               }}
             />

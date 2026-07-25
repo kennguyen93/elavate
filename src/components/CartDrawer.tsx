@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { X, Trash2, ShieldCheck, CreditCard, ChevronRight, CheckCircle, Package, ArrowRight, Gift } from "lucide-react";
 import { CartItem } from "../types";
 import { motion, AnimatePresence } from "motion/react";
+import chocolateImg from "../assets/images/elavate_chocolate_collagen_1784471078378.jpg";
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -170,7 +171,7 @@ export default function CartDrawer({
                                       const target = e.currentTarget;
                                       if (!target.dataset.fallbackTried) {
                                         target.dataset.fallbackTried = "true";
-                                        target.src = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1000&auto=format&fit=crop";
+                                        target.src = chocolateImg;
                                       }
                                     }}
                                   />

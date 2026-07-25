@@ -3,6 +3,7 @@ import { Check, Flame, Trophy, Sparkles, Gift, Plus, ShoppingCart } from "lucide
 import { FLAVORS, PACKAGE_OPTIONS } from "../data";
 import { Flavor, PackageOption } from "../types";
 import { motion } from "motion/react";
+import chocolateImg from "../assets/images/elavate_chocolate_collagen_1784471078378.jpg";
 
 interface ProductSelectorProps {
   onAddToCart: (flavor: Flavor, pkg: PackageOption, addOns: { frother: boolean; shaker: boolean }) => void;
@@ -68,14 +69,14 @@ export default function ProductSelector({ onAddToCart }: ProductSelectorProps) {
                       <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-slate-100 flex-shrink-0">
                         {flavor.id === "chocolate" ? (
                           <img
-                            src={flavor.image}
+                            src={flavor.image || chocolateImg}
                             alt={flavor.name}
                             className="w-full h-full object-cover"
                             onError={(e) => {
                               const target = e.currentTarget;
                               if (!target.dataset.fallbackTried) {
                                 target.dataset.fallbackTried = "true";
-                                target.src = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1000&auto=format&fit=crop";
+                                target.src = chocolateImg;
                               }
                             }}
                           />

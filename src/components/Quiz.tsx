@@ -3,6 +3,7 @@ import { X, Check, Award, ArrowRight, ArrowLeft, RefreshCw, Sparkles, Gift } fro
 import { QUIZ_QUESTIONS, FLAVORS } from "../data";
 import { Flavor } from "../types";
 import { motion, AnimatePresence } from "motion/react";
+import chocolateImg from "../assets/images/elavate_chocolate_collagen_1784471078378.jpg";
 
 interface QuizProps {
   isOpen: boolean;
@@ -193,14 +194,14 @@ export default function Quiz({ isOpen, onClose, onApplyRecommendation }: QuizPro
                 <div className="w-16 h-16 rounded-xl overflow-hidden border border-slate-100 flex-shrink-0 bg-white">
                   {rec.flavor.id === "chocolate" ? (
                     <img
-                      src={rec.flavor.image}
+                      src={rec.flavor.image || chocolateImg}
                       alt={rec.flavor.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.currentTarget;
                         if (!target.dataset.fallbackTried) {
                           target.dataset.fallbackTried = "true";
-                          target.src = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1000&auto=format&fit=crop";
+                          target.src = chocolateImg;
                         }
                       }}
                     />
