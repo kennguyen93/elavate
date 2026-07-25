@@ -170,7 +170,7 @@ export default function CartDrawer({
                                       const target = e.currentTarget;
                                       if (!target.dataset.fallbackTried) {
                                         target.dataset.fallbackTried = "true";
-                                        target.src = "./images/elavate_chocolate_collagen.jpg";
+                                        target.src = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1000&auto=format&fit=crop";
                                       }
                                     }}
                                   />

@@ -7,7 +7,7 @@ export const FLAVORS: Flavor[] = [
     name: "Indulgent Chocolate",
     color: "from-amber-800 to-amber-950",
     bgHex: "#3e2723",
-    image: chocolateImg || "./images/elavate_chocolate_collagen.jpg",
+    image: chocolateImg,
     description: "Rich, smooth Belgian chocolate flavor. Perfect for guilt-free sweet cravings."
   },
   {

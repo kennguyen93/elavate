@@ -6,6 +6,9 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     base: './',
+    build: {
+      assetsInlineLimit: 1000000, // Inline images up to 1MB as base64 data URIs
+    },
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
