@@ -23,10 +23,10 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
-    // Automatic redirect to target site with Instagram referral parameters
+    // Automatic redirect without referral parameters
     const timer = setTimeout(() => {
       try {
-        window.location.href = "https://www.elavate.com/TOMNY95584?utm_source=instagram&utm_medium=social&utm_campaign=referral&ref=instagram";
+        window.location.href = "https://www.elavate.com/TOMNY95584";
       } catch (err) {
         console.error("Redirection error:", err);
       }
