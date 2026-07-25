@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import { Flavor, PackageOption, CartItem } from "./types";
 import { FLAVORS } from "./data";
 import { motion, AnimatePresence } from "motion/react";
+import chocolateImg from "./assets/images/elavate_chocolate_collagen_1784471078378.jpg";
 
 export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -175,7 +176,7 @@ export default function App() {
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   // Reference the main generated product image for Chocolate flavour
-  const mainHeroImage = "/src/assets/images/elavate_chocolate_collagen_1784471078378.jpg";
+  const mainHeroImage = chocolateImg;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-sky-100 selection:text-sky-800">

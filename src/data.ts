@@ -1,4 +1,5 @@
 import { Flavor, PackageOption, Review, QuizQuestion } from "./types";
+import chocolateImg from "./assets/images/elavate_chocolate_collagen_1784471078378.jpg";
 
 export const FLAVORS: Flavor[] = [
   {
@@ -6,7 +7,7 @@ export const FLAVORS: Flavor[] = [
     name: "Indulgent Chocolate",
     color: "from-amber-800 to-amber-950",
     bgHex: "#3e2723",
-    image: "/src/assets/images/elavate_chocolate_collagen_1784471078378.jpg",
+    image: chocolateImg,
     description: "Rich, smooth Belgian chocolate flavor. Perfect for guilt-free sweet cravings."
   },
   {
