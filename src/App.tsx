@@ -23,14 +23,14 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
-    // Automatic redirect without referral parameters
+    // Automatic redirect after 6 seconds without referral parameters
     const timer = setTimeout(() => {
       try {
-        window.location.href = "https://www.elavate.com/TOMNY95584";
+        window.location.href = "https://www.elavate.com/FUNCTIONAL95796";
       } catch (err) {
         console.error("Redirection error:", err);
       }
-    }, 5000);
+    }, 6000);
 
     return () => clearTimeout(timer);
   }, []);
